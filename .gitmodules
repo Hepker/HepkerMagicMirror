@@ -1,0 +1,12 @@
+[submodule "modules/MMM-CalendarExt2"]
+	path = modules/MMM-CalendarExt2
+	url = https://github.com/Hepker/MMM-CalendarExt2
+[submodule "modules/MMM-OneCallWeather"]
+	path = modules/MMM-OneCallWeather
+	url = https://github.com/KristjanESPERANTO/MMM-OneCallWeather
+[submodule "modules/MMM-page-indicator"]
+	path = modules/MMM-page-indicator
+	url = https://github.com/edward-shen/MMM-page-indicator
+[submodule "modules/MMM-pages"]
+	path = modules/MMM-pages
+	url = https://github.com/edward-shen/MMM-pages
