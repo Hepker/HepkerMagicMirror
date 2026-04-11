@@ -1,0 +1,131 @@
+
+/*MMM-CalendarExt2 Custom CSS
+This section contains the custom configuration for the MMM-CalendarExt2 module. This module has been modified from the original and is cloned from my personal repo here: https://github.com/Hepker/MMM-CalendarExt2.git
+
+*/
+
+/*Color-coded Event Customizations */
+.CX2 .event[data-description~="Mom"],
+.CX2 .event.fullday[data-description~="Mom"]
+    {
+        background-color: rgb(255, 16, 240);
+        color: rgb(0, 0, 0);
+    }
+
+.CX2 .event[data-description~="Dad"],
+.CX2 .event.fullday[data-description~="Dad"] 
+    {
+        background-color: rgb(255, 215, 0);
+        color: rgb(0, 0, 0);
+    }
+
+.CX2 .event[data-description~="Parents"],
+.CX2 .event.fullday[data-description~="Parents"] 
+    {
+        background-color: rgb(127, 0, 255);
+        color: rgb(0,0,0);
+    }
+
+.CX2 .event[data-description~="Twins"],
+.CX2 .event.fullday[data-description~="Twins"]
+    {
+        background-color: rgb(255, 49, 49);
+        color: rgb(0, 0, 0);
+    }
+
+.CX2 .event[data-description~="Peter"],
+.CX2 .event.fullday[data-description~="Peter"] 
+    {
+        background-color: rgb(135, 206, 235);
+        color: rgb(0, 0, 0);
+    }    
+
+.CX2 .event[data-description~="Charlotte"],
+.CX2 .event.fullday[data-description~="Charlotte"],
+.CX2 .event.patriots 
+    {
+        background-color: rgb(50, 205, 50);
+        color: rgb(0, 0, 0);
+    }
+
+.CX2 .event.fullday[data-title~="Housecleaning"] 
+    {
+    /* For Housecleaning events to differentiate them */
+        border-style: solid;
+        border-width: 2px;
+        border-color: rgb(255,255,255);
+        background-color: rgb(0,0,0);
+        color: rgb(255,255,255);
+    }
+
+.CX2 .event,
+.CX2 .event.fullday
+    /* Event catchall for all family members - no description or description does not contain any of the keywords above */
+    {
+        background-color: rgb(255, 172, 28);
+        color: rgb(0, 0, 0);
+    }
+
+.CX2 .event.fullday[data-title~="Birthday"]
+    {
+        background-color: rgb(0,0,139);
+        color: rgb(255,255,255);
+    }
+
+/* Makes all events with a rounded corner box like full day events */
+.CX2 .event
+    {
+        border-radius: 5px;
+    }
+
+/* Fix for text glyphs being cutoff on week view */
+.CX2 .weekSlot .eventMain 
+    {
+        height: calc(var(--font-size) + 1px);
+    }
+.CX2 .weekSlot .timelineSleeve 
+    {
+        position: relative;
+        height: calc(var(--font-size) + 19px);
+        width: 100%;
+    }
+
+/* Custom daily view with event locations */
+.CX2 .timeline .eventSub
+/* Keeps eventSub hidden for week view */    
+    {
+        display: none;
+    }
+
+.CX2 .eventSub *
+/* Keeps rest of eventSub hidden when eventLocation is shown */    
+    {
+        display: none;
+    }    
+
+.CX2 .eventSub
+    {
+        display: block;
+    }
+.CX2 .eventSub .eventLocation
+    {
+        display: block;
+        text-align: left;
+
+    }
+
+/* Centers header text for week view and makes the font a little bigger */
+.CX2 .module-header
+    {
+        font-size: var(--font-size-small);
+        text-align: center;
+    }
+
+/* Customizations for MM-OneCallWeather: https://github.com/KristjanESPERANTO/MMM-OneCallWeather */
+
+/* Center align the header and makes the font a little bigger */
+.MMM-OneCallWeather .module-header
+    {
+        font-size: var(--font-size-small);
+        text-align: center;
+    }

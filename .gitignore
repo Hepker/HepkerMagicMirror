@@ -54,13 +54,16 @@ Temporary Items
 .directory
 .Trash-*
 
-# Ignore all modules
-/modules/*
+# Ignore all modules **Commented out so that modules can be added as submodules in MM repo**
+# /modules/*
 
-# Ignore users config file but keep the samples.
-config
+# Ignore users config file but keep the samples **Commented out config file, will use env variables to secretize config file**
+# config
 !config/config.js.sample
 !config/custom.css.sample
+
+# Ignore environment variables file
+*.env
 
 # Vim
 ## swap
