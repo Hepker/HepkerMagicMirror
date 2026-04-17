@@ -22,11 +22,6 @@ function getStartup (req, res) {
  * @returns {string} the input with real variable content
  */
 function replaceSecretPlaceholder (input) {
-<<<<<<< HEAD
-	return input.replaceAll(/\*\*(SECRET_[^*]+)\*\*/g, (match, group) => {
-		return process.env[group];
-	});
-=======
 	if (global.config.cors !== "allowAll") {
 		return input.replaceAll(/\*\*(SECRET_[^*]+)\*\*/g, (match, group) => {
 			return process.env[group];
@@ -37,7 +32,6 @@ function replaceSecretPlaceholder (input) {
 		}
 		return input;
 	}
->>>>>>> upstream/develop
 }
 
 /**
@@ -66,17 +60,11 @@ async function cors (req, res) {
 			return res.status(400).send(url);
 		} else {
 			url = match[1];
-<<<<<<< HEAD
-			if (typeof config !== "undefined") {
-=======
 			if (typeof global.config !== "undefined") {
->>>>>>> upstream/develop
 				if (config.hideConfigSecrets) {
 					url = replaceSecretPlaceholder(url);
 				}
 			}
-<<<<<<< HEAD
-=======
 
 			// Validate protocol before attempting connection (non-http/https are never allowed)
 			let parsed;
@@ -102,7 +90,6 @@ async function cors (req, res) {
 				Log.warn(`CORS blocked (not in whitelist): ${url}`);
 				return res.status(403).json({ error: "Forbidden: domain not in corsDomainWhitelist" });
 			}
->>>>>>> upstream/develop
 
 			const headersToSend = getHeadersToSend(req.url);
 			const expectedReceivedHeaders = geExpectedReceivedHeaders(req.url);
@@ -233,11 +220,7 @@ function getUserAgent () {
  * @returns {object} environment variables key: values
  */
 function getEnvVarsAsObj () {
-<<<<<<< HEAD
-	const obj = { modulesDir: `${config.foreignModulesDir}`, defaultModulesDir: `${config.defaultModulesDir}`, customCss: `${config.customCss}` };
-=======
 	const obj = { modulesDir: `${global.config.foreignModulesDir}`, defaultModulesDir: `${global.config.defaultModulesDir}`, customCss: `${global.config.customCss}` };
->>>>>>> upstream/develop
 	if (process.env.MM_MODULES_DIR) {
 		obj.modulesDir = process.env.MM_MODULES_DIR.replace(`${global.root_path}/`, "");
 	}
